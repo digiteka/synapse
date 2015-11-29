@@ -19,8 +19,8 @@ module Synapse
       end
 
       @serf_members = '/dev/shm/serf_members.json'
-      if opts['serf_members']
-        @serf_members = opts['serf_members']
+      if opts['discovery']['serf_members']
+        @serf_members = opts['discovery']['serf_members']
       end
     end
 
