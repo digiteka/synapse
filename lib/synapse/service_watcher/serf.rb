@@ -12,10 +12,14 @@ module Synapse
       if opts['haproxy']['all_backups_except_one']
         @all_backups_except_one = opts['haproxy']['all_backups_except_one']
       end
+
+      @serf_members = '/dev/shm/serf_members.json'
+      if opts['serf_members']
+        @serf_members = opts['serf_members']
+      end
     end
 
     def start
-      @serf_members = '/dev/shm/serf_members.json'
       @cycle_delay = 1
 
       @last_ctime = 0
